@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f0">
+  <meta name="description" content="A little life simulator about the big choices.">
+  <title>Little Life — A life, your way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Little Life home"><span class="brand-mark">✳</span><span>little<span class="brand-life">life</span><span class="brand-dot">.</span></span></a>
+    <div class="top-center"><span class="sun">✳</span> A LITTLE LIFE, A LOT OF POSSIBILITIES</div>
+    <div class="top-actions"><button id="save-menu" class="new-life">Save &amp; load</button><button id="new-life" class="new-life"><span>↻</span> New life</button></div>
+  </header>
+  <div id="storage-warning" class="storage-warning" role="status" hidden>Saving is unavailable in this browser. Your progress may be lost when you leave; use Save &amp; load to download a backup.</div>
+  <main class="layout">
+    <aside class="left-column">
+      <div class="section-kicker">YOUR STORY <span>✦</span></div>
+      <section class="profile card">
+        <div class="profile-art"><div class="art-sun">✳</div><div class="art-cloud cloud-one">☁</div><div class="art-cloud cloud-two">☁</div><div class="portrait" id="portrait">👶</div><div class="art-ground"></div><div class="art-flower flower-one">✿</div><div class="art-flower flower-two">✿</div></div>
+        <div class="profile-body"><div class="eyebrow">MEET THE MAIN CHARACTER</div><h1 id="character-name"></h1><p id="character-location" class="location"></p><div class="profile-meta"><div><span>AGE</span><strong id="profile-age">0 years</strong></div><div><span>OCCUPATION</span><strong id="occupation">Newborn</strong></div></div></div>
+      </section>
+      <section class="card stats-card"><div class="card-heading"><div><div class="eyebrow">THE CURRENT YOU</div><h2>Life stats <span>✳</span></h2></div><span class="tiny-label">YOUR VITALS</span></div><div id="stats"></div><div id="health-status"></div><p class="stats-note">✦ &nbsp; Low happiness can affect your health. Take care of yourself!</p></section>
+      <div class="left-footer">Made for life's little adventures <span>♡</span></div>
+    </aside>
+    <section class="story-column">
+      <div class="story-heading"><div><div class="section-kicker">THE STORY SO FAR <span>✦</span></div><h2>Your life, your story<span class="heading-dot">.</span></h2><p>Every year is a new chapter. Make it a good one.</p></div><div class="chapter-badge"><span>✧</span> YOUR JOURNEY</div></div>
+      <div class="story-card card"><div class="story-card-top"><div><span class="live-dot"></span> <span id="life-status">LIFE IN PROGRESS</span></div><span id="chapter-label">CHAPTER 01</span></div><div id="timeline" class="timeline" aria-live="polite"></div><div class="story-bottom" id="story-bottom"><span>✧</span> Your story is still being written... <span>✧</span></div></div>
+      <div class="age-area"><div class="age-caption"><span>THE FUTURE IS YOURS</span><strong>What happens next?</strong></div><button id="age-up" class="age-button"><span class="plus">＋</span><span><strong>Age up</strong><small>See what the next year brings</small></span><span class="arrow">↗</span></button><p>One click, one year. Make every one count. <span>✦</span></p></div>
+    </section>
+    <aside class="right-column"><div class="section-kicker">MAKE YOUR MOVES <span>✦</span></div><section class="card actions-card"><div class="card-heading"><div><div class="eyebrow">LIFE IS WHAT YOU MAKE IT</div><h2>Explore life <span>✳</span></h2></div></div><p class="actions-intro">Little choices can lead to big things.</p><div class="moments" id="moments"></div><div class="actions-list"><button data-panel="activities"><span class="action-icon peach">✦</span><span><strong>Activities</strong><small>Find something fun to do</small></span><b>›</b></button><button data-panel="relationships"><span class="action-icon pink">♡</span><span><strong>Relationships</strong><small>Your favorite people</small></span><b>›</b></button><button data-panel="occupation"><span class="action-icon blue">▤</span><span><strong>School & career</strong><small>Dream big, work hard</small></span><b>›</b></button><button data-panel="assets"><span class="action-icon yellow">◇</span><span><strong>Assets</strong><small>The things you own</small></span><b>›</b></button><button data-panel="milestones"><span class="action-icon lavender">✧</span><span><strong>Milestones</strong><small>Celebrate your journey</small></span><b>›</b></button></div></section>
+      <section class="card money-card"><div class="money-head"><div><div class="eyebrow">A LITTLE NEST EGG</div><h2>Finances <span>✳</span></h2></div><span class="money-icon">＄</span></div><span class="balance-label">BANK BALANCE</span><div class="balance" id="balance">$0</div><div class="money-line"></div><div class="income-line"><span>Annual income <small>(before tax)</small></span><strong id="income">$0</strong></div><div class="income-line investment-line"><span>Investments</span><strong id="investment">$0</strong></div><p class="finance-note">From age 19: 20% income tax, $12k yearly living costs ($8k with a house), plus $2k per child under 18 and $500 per pet. Unpaid costs affect happiness.</p></section>
+      <div class="quote-card"><div class="quote-sparkle">✺</div><p>“Life is a collection of little moments.”</p><span>MAKE THEM COUNT &nbsp; ✦</span></div>
+    </aside>
+  </main>
+  <footer class="page-footer"><span>✳ &nbsp; LITTLE LIFE</span><span>ONE LIFE. ENDLESS STORIES.</span><span>MADE WITH ♡ FOR DAYDREAMERS</span></footer>
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-backdrop" data-close></div><div class="modal-box"><button class="close-modal" data-close aria-label="Close">×</button><div id="modal-content"></div></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
